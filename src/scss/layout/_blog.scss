@@ -1,0 +1,77 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as mix;
+
+.contenido-principal{
+    @include mix.tablet {
+        & {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            column-gap: 4rem;
+        }
+    }
+}
+
+.entrada {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+.entrada-blog{
+    margin-bottom: 2rem;
+    text-align: center;
+    box-shadow: 0 .8rem 1.6rem 0 rgba(0,0,0,.5);
+    padding: 1rem;
+}
+.entrada__enlace{
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.cursos {
+    list-style: none;
+    text-align: left;
+}
+
+.widget-curso {
+    margin-bottom: 2rem;
+    .widget-curso__label {
+        font-family: v.$fuenteHeading;
+        font-weight: bold;
+    }
+    .widget-curso__info {
+        font-weight: normal;
+    }
+    .widget-curso__label,
+    .widget-curso__info {
+        font-size: 2rem;
+    }
+}
+.blog-principal{
+    margin: 5rem;
+    padding-top: 15rem;
+    align-items: center;
+    text-align: center;
+}
+.blog-grid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 2rem;
+}
+.curso-principal{
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 2rem;
+    @include mix.desktop {
+        & {
+            grid-template-columns: repeat(3,1fr);
+        }
+    }
+    .imagen-curso{
+        text-align: center;
+        margin-top: 1rem;
+    }
+    .campo-curso{
+        box-shadow: 0 .8rem 1.6rem 0 rgba(0,0,0,.5);
+        padding: 2rem;
+    }
+}

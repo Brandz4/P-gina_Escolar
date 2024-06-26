@@ -1,0 +1,35 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as mix;
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    background-color: v.$negro;
+    text-align: center;
+    @include mix.desktop {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        & h2{
+            padding-left: 3rem;
+        } 
+        & p{
+            margin: 3rem 1rem 1rem 1rem;
+        }
+    }
+    & h2{
+        color: v.$blanco;
+        font-size: 3rem;
+    } 
+    & p{
+        color: v.$blanco;
+        font-size: 1.5rem;
+        margin: 3rem 1rem 1rem 1rem;
+    }
+    & img{
+       margin: 0 auto;
+    }
+}
+.logo-footer{
+    width: 8rem;
+}

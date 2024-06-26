@@ -1,0 +1,19 @@
+{
+    "name": "cerg2/somosuaq",
+    "description": "Proyecto de análisis y diseño de software",
+    "authors": [
+        {
+            "name": "Carlos",
+            "email": "cerg24@outlok.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Cerg2\\": "somosUAQ/"
+        }
+    },
+    "require": {
+        "justinrainbow/json-schema": "^5.2",
+        "vlucas/phpdotenv": "^5.6"
+    }
+}

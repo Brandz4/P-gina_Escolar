@@ -1,0 +1,132 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as mix;
+
+.body-login{
+    background-color: v.$gris;
+}
+.logo-login{
+    text-align: center;
+    width: 8rem;
+    position: fixed;
+    @include mix.desktop {
+        width: 20rem;
+        margin-top: 2rem;
+        position: relative;
+    }
+}
+.center{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40rem;
+    height: 50rem;
+    border: solid 2px v.$blanco;
+    border-radius: 1.5rem;
+    background-color: v.$blanco;
+    box-shadow: 0 .8rem 1.6rem 0 rgba(0,0,0,0.2);
+    & h1 {
+        text-align: center;
+        color: v.$azulOscuro;
+        font-size: 5rem;
+    }
+    & h3 {
+        text-align: center;
+        font-size: 3rem;
+        font-weight: 400;
+    }
+    @include mix.desktop {
+        flex-direction: row;
+        width: 100rem;
+        height: 35rem;
+    }
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 3rem;
+    @include mix.desktop {
+        flex-direction: row;
+    }
+}
+.bienvenido{
+    margin: 3rem
+}
+.form-login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    & .txt_field {
+        position: relative;
+        margin-bottom: 1.5rem;
+    }
+    @include mix.desktop {
+        margin-left: 8rem;
+    }
+}
+.txt_field{
+    & label {
+        position: absolute;
+        background-color: v.$blanco;
+        top: 70%;
+        left: 1.5rem;
+        color: v.$grisfuerte;
+        transform: translateY(-130%);
+        font-size: 1.5rem;
+        pointer-events: none;
+        transition: 0.5s;
+        font-family: v.$fuenteParrafos;
+        font-weight: 600;
+    }
+}
+.txt_field input {
+    font-size: 1.4rem;
+    font-family: v.$fuenteParrafos;
+    border: none;
+    background: none;
+    color: v.$azulOscuro;
+    width: 25rem;
+    height: 5rem;
+    border: .2rem solid #909090;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+
+    &:focus ~ label,
+    &:valid ~ label {
+        top: 21px;
+        color: #818183;
+    }
+    &:focus ~ span::before,
+    &:valid ~ span::before {
+        width: 100%;
+    } 
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.pass {
+    display: flex;
+    justify-content: end;
+    & input{
+        background-color: v.$blanco;
+        border: solid .2rem v.$grisfuerte;
+        border-radius: 1rem;
+        height: 4rem;
+        width: 9rem;
+        color: v.$grisfuerte;
+        font-family: v.$fuenteParrafos;
+    }
+    & input:hover, & input:focus {
+        background-color: v.$azulOscuro;
+        transition: 0.5s;
+        color: v.$blanco;
+        border: none;
+    }
+}

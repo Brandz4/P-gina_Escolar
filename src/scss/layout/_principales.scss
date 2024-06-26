@@ -1,0 +1,230 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as mix;
+
+.imagen-usuario{
+    width: 15rem;
+    height: 20rem;
+}
+.contenedor-principales{
+    margin-top:16rem;
+    margin-left:18rem;
+}
+.header-principales{
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 16rem;
+    padding-top: 4rem;
+    padding: 1.5rem;
+    padding-right: 2rem;
+    padding-left: 4rem;
+    & h3{
+        font-size: 2rem;
+        color: v.$morado;
+    }
+    & p{
+        font-size: 2rem;
+        color: v.$blanco;
+    }
+}
+.header-azul{
+    background: rgb(46,49,93);
+    background: linear-gradient(90deg, rgba(46,49,93,1) 9%, rgba(0,164,255,1) 100%);
+}
+.datos{
+    text-align: center;
+}
+.nav-principales{
+    display: flex;
+    position: fixed;
+    left: 0;
+    top: 0;
+    flex-direction: column;
+    gap: 4rem;
+    text-align: center;
+    margin-top: 16rem;
+    width: 18rem;
+    height: 100%;
+    padding-top: 2rem;
+    background: rgb(46,49,93);
+}
+.nav-en-principal{
+    color: v.$blanco;
+    font-size: 2rem;
+    font-family: v.$fuenteParrafos;
+    font-weight: 00;
+    border-bottom: .1rem solid v.$grisfuerte;
+    &:hover{
+        color: v.$grisfuerte;
+    }
+}
+.imagen-escudo{
+    width: 12rem;
+}
+.footer-principales{
+    margin-left: 18rem;
+}
+
+// Calificaciones Docente
+.crud-califaciones{
+    display: flex;
+    flex-direction: column;
+}
+.campo-cr-calificaiones{
+    background-color: v.$negro;
+}
+// Kardex Alumno
+.constancia {
+    margin: 0 auto;
+    margin-top: 5rem;
+    width: 90rem;
+    border: 1rem solid v.$grisfuerte;
+    .constancia-header {
+        text-align: center;
+    }
+    .constancia-terminos{
+        font-size: 1.9rem;
+        margin: 1rem;
+        text-align: center;
+        border: .4rem solid v.$gris;
+    }
+    .constancia-footer {
+        text-align: center;
+        margin: .6rem;
+    }
+    .constancia-boton{
+        background-color: v.$azul;
+        width: 17rem;
+        color: v.$blanco;
+        text-align: center;
+        text-decoration: none;
+        margin: 0 auto;
+    }
+    .estado-academico{
+        font-size: 2rem;
+        margin: 1rem;
+    }
+}
+.constancia-columnas{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 1rem;
+    margin: 0 auto;
+    margin: 1rem;
+    font-size: 2rem;
+    .constancia-columna{
+        background-color: v.$gris;
+        padding: 1rem;
+    }
+} 
+// FORMULARIOS PRINCIPALES
+.form-crear-alumno,.form-crear-docente,.form-crear-materia,.form-crear-clase,
+.form-crear-grupo,.form-crear-carrera,.form-crear-blog,.form-crear-MD
+{
+    display: none;
+}
+.buscacion-alumno,.buscacion-docente,.buscacion-materia,.buscacion-clase,.buscacion-grupo,
+.buscacion-carrera,.buscacion-blog,.buscacion-MD{
+    display: none;
+}
+.form-principales{
+    .campo__legend{
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin: 1rem;
+    }
+    .campo__label{
+        text-transform: uppercase;
+        font-weight: 700;
+        text-align: left;
+    }
+    .campo__field{
+        background-color: v.$gris;
+        font-size: 1.9rem;
+        height: 4rem;
+        padding-left: 2rem;
+        &:focus{
+            border: .1rem solid v.$negro;
+            background-color: v.$blanco;
+            transition: .3s;
+        }
+    }
+    .pass-boton{
+        width: 25rem;
+        height: 5rem;
+        margin: 0 auto;
+        margin-top: 1rem;
+        font-weight: 700;
+        font-size: 2rem;
+    }
+}
+.campo__imagen{
+    margin: 0 auto;
+    padding: .5rem;
+    font-size: 1.9rem;
+}
+.campo__horario{
+    border: .1rem solid v.$negro;
+    background-color: v.$gris;
+    font-size: 2.3rem;
+    height: 20rem;
+    padding-left: 2rem;
+    flex: 1;
+}
+.indicacion-horario{
+    margin: 0 auto;
+    padding: 1rem;
+    & p{
+        font-weight: 700;
+        font-size: 2rem;
+    }
+}
+.campo__descripcion{
+    height: 20rem;
+    border: .1rem solid v.$negro;
+    background-color: v.$gris;
+    font-size: 1.9rem;
+    flex: 1;
+    justify-content: flex-start;
+}
+.buscacion{
+    text-align: center;
+    margin: 3rem;
+    input[type="submit"]{
+        border: none;
+        background-color: v.$negro;
+        color: v.$blanco;
+        height: 4rem;
+        width: 15rem;
+        font-size: 1.8rem;
+        font-weight: 700;
+        &:hover,&:focus{
+            border: none;
+            background-color: v.$gris;
+            color: v.$negro;
+            transition: .2s;
+        }
+    }
+    input[type="text"]{
+        border: none;
+        background-color: v.$gris;
+        height: 4rem;
+        width: 30rem;
+        font-size: 2rem;
+        &:hover,&:focus{
+            border: .2rem solid v.$negro;
+            background-color: v.$blanco;
+            color: v.$negro;
+            transition: .2s;
+        }
+    }
+}
+.contenedor-calificaciones{
+    margin-top: 2rem;
+    width: 70rem;
+    font-size: 1.9rem;
+}

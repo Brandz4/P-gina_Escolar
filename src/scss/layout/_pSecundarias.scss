@@ -1,0 +1,15 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as mix;
+
+.contenedor-convocatorias{
+    padding-top: 19rem;
+    @include mix.desktop {
+        padding-top: 15rem;
+    }
+}
+.carrera{
+    color: v.$azulOscuro;
+    &:hover{
+        color: v.$grisfuerte;
+    }
+}

@@ -1,0 +1,40 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as mix;
+
+.campos-crud{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 3rem;
+    margin: 2rem;
+    @include mix.desktop {
+        grid-template-columns: repeat(4,1fr);
+    }
+    .campo-crud{
+        margin: 0 auto;
+    }
+    .botones-crud{
+        width: 23rem;
+        height: 7rem;
+        border: .2rem solid v.$negro;
+        &:hover,&:focus{
+            background-color: v.$morado;
+            color: v.$azul;
+            transition: .25s;
+            border: none;
+        }
+    }
+}
+.alerta{
+    padding: 1.5rem;
+    text-align: center;
+    color: v.$blanco;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 1rem 1rem;
+    &.error{
+      background-color: v.$rojo;  
+    }
+    &.exito{
+      background-color: v.$verde;
+    }
+}

@@ -1,0 +1,76 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as mix;
+// Barra
+.barra {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20rem;
+    padding: 0 10% 0 10%;
+    background: rgb(156,25,162);
+    background: linear-gradient(90deg, rgba(156,25,162,1) 0%, rgba(190,24,250,1) 53%, rgba(255,0,164,1) 100%); 
+    @include mix.tablet {
+        & {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 15rem;
+        }
+    }
+}
+.header {
+    margin-top: 12rem;
+    width: 100%;
+    height: 100%;
+    background-image: url(../../img/banner.jpg),url(../../img/banner.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    .header__texto {
+        padding-top: 20rem;
+        text-align: center;
+        color: v.$blanco;
+        font-weight: 700;
+        text-shadow: 4px 4px 4px rgba(0, 0, 0, 1);
+        @include mix.tablet {
+            & {
+                padding: 26rem;
+                font-size: 2rem;
+            }
+        }
+     }
+}
+.logo {
+    color: v.$negro;
+    font-size: 2.5rem;
+    &:hover{
+        color: v.$gris;
+    }
+    .logo__nombre {
+        font-weight: 400;
+    }
+    .logo__bold {
+        font-weight: 700;
+    }   
+}
+.navegacion{
+    @include mix.tablet {
+        display: flex;
+        gap:4rem;
+        margin-left: 4rem;
+    }
+    .navegacion__enlace {
+        display: block;
+        text-align: center;
+        font-size: 2.5rem;
+        color: v.$negro;
+        &:hover{
+            color: v.$blanco;
+        }
+        @include mix.tablet {
+            margin-left: 2rem;
+        }
+    }
+}

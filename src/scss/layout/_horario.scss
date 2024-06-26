@@ -1,0 +1,12 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as mix;
+
+table.tabla-horario{
+    thead{
+        background-color: v.$morado;
+    }
+    tbody{
+        background-color: v.$gris;
+        text-align: center;
+    }
+}
